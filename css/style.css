@@ -66,6 +66,7 @@ header {
     padding: 18px 20px;
     transition: color 1s;
     font-size: 13px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 @media (min-width: 400px) {
@@ -76,13 +77,7 @@ header {
 
 @media (min-width: 400px) {
     .menu a {
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 600px) {
-    .menu a {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
@@ -104,14 +99,12 @@ a {
 
 .site-title {
     font-size: 2.5em;
-    /* font-family: 'Gloria Hallelujah', cursive; */
     font-family: 'Press Start 2P', cursive;
 }
 
 .site-subtitle {
     font-style: italic;
-    /* font-family: 'Press Start 2P', cursive; */
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Roboto Mono', monospace;
     line-height: 1.8em;
 }
 
@@ -141,7 +134,7 @@ a {
 .sobre h2,
 .contato h2,
 .portfolio h2 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Roboto Mono', monospace;
     color: whitesmoke;
     margin-bottom: 1.5em;
     font-size: 2em;
@@ -188,25 +181,28 @@ a {
 }
 
 .sobre .avatar {
-    margin-left: 2em;
+    display: flex;
+    justify-content: center;
 }
 
 .sobre .avatar img {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
 }
 
 @media (min-width: 600px) {
     .sobre .avatar {
         float: right;
+        margin-left: 2em;
     }
 }
 
 .portfolio .grid {
     display: grid;
     gap: 2em;
+    justify-content: center;
 }
 
 @media(min-width: 560px) {
