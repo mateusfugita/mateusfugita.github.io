@@ -15,7 +15,7 @@ body {
     background-position-x: center;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Montserrat', sans-serif;
     height: 100vh;
     font-size: 10px;
 }
@@ -63,10 +63,10 @@ header {
 
 .menu a {
     display: block;
-    padding: 18px 20px;
-    transition: color 1s;
     font-size: 13px;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Montserrat', sans-serif;
+    padding: 18px 20px;
+    transition: color .6s;
 }
 
 @media (min-width: 400px) {
@@ -99,28 +99,57 @@ a {
 
 .site-title {
     font-size: 2.5em;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .site-subtitle {
-    font-style: italic;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
     line-height: 1.8em;
+    white-space: nowrap;
+}
+
+.site-subtitle::after {
+    content: '|';
+    margin-left: 4px;
+    animation: blink .5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .sobre,
 .contato,
-.portfolio {
+.conhecimento {
     padding: 2em;
 }
 
-.sobre,
-.portfolio {
+.sobre {
     min-height: 100vh;
+}
+
+.conhecimento {
+    min-height: 50vh;
 }
 
 .contato {
     height: fit-content;
+}
+
+@media(min-width: 600px) {
+    .conhecimento {
+        min-height: 100vh;
+    }
+    .contato {
+        min-height: 70vh;
+    }
 }
 
 @media(min-width: 1200px) {
@@ -133,8 +162,8 @@ a {
 
 .sobre h2,
 .contato h2,
-.portfolio h2 {
-    font-family: 'Roboto Mono', monospace;
+.conhecimento h2 {
+    font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     margin-bottom: 1.5em;
     font-size: 2em;
@@ -142,7 +171,7 @@ a {
 }
 
 .sobre h2::after,
-.portfolio h2::after,
+.conhecimento h2::after,
 .contato h2::after {
     content: "";
     display: block;
@@ -153,22 +182,22 @@ a {
 }
 
 .sobre p {
-    font-size: 14px;
+    font-size: 15px;
     color: white;
     text-indent: 1.4em;
-    margin-bottom: 1.4em;
+    margin-top: 1em;
     text-align: justify;
 }
 
 @media (min-width: 400px) {
     .sobre p {
-        font-size: 16px;
+        font-size: 19px;
     }
 }
 
 @media (min-width: 600px) {
     .sobre p {
-        font-size: 18px;
+        font-size: 23px;
     }
 }
 
@@ -199,46 +228,41 @@ a {
     }
 }
 
-.portfolio .grid {
-    display: grid;
-    gap: 2em;
+.conhecimento {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.conhecimento ul {
+    max-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-@media(min-width: 560px) {
-    .portfolio .grid {
-        grid-template-columns: 240px 240px;
+@media(min-width: 400px){
+    .conhecimento ul {
+        max-width: 350px;
     }
 }
 
-@media(min-width: 880px) {
-    .portfolio .grid {
-        grid-template-columns: repeat(3, 260px);
-        justify-content: center;
-        align-content: center;
-        height: calc(100vh - 48px - 8em);
+@media(min-width: 600px){
+    .conhecimento ul {
+        max-width: 500px;
     }
 }
 
-figcaption {
-    color: lightgray;
-}
-
-.portfolio figure {
-    text-align: center;
-}
-
-.img-portfolio {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    object-position: left bottom;
-    border-radius: 5px;
-    transition: transform 1s;
-}
-
-.img-portfolio:hover {
-    transform: scale(1.1);
+.conhecimento li {
+    float: left;
+    display: block;
+    font-size: 1.5em;
+    font-weight: 300;
+    padding: 4px 16px;
+    margin: 16px 16px 0 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    color: #fff;
 }
 
 .contato .icons {
@@ -255,4 +279,17 @@ figcaption {
 .contato a:hover{
     text-decoration: none;
     text-shadow: 0 0 10px rgb(0, 0, 218);
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+}
+
+footer p {
+    color: whitesmoke;
+    font-size: 1.2em;
 }
